@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test -- --watch
+  C:\Program Files\nodejs\node.exe C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build:prod
 
 PATH: 
   C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Vita NTB\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Vita NTB\AppData\Roaming\npm;C:\Program Files\heroku\bin
@@ -21,7 +21,8 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "serve": "live-server public/",
-      "build": "webpack",
+      "build:dev": "webpack",
+      "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
       "test": "jest --config=jest.config.json"
     },
@@ -35,6 +36,7 @@ npm manifest:
       "css-loader": "^0.28.4",
       "enzyme": "3.0.0",
       "enzyme-adapter-react-16": "1.0.0",
+      "enzyme-to-json": "3.0.1",
       "jest": "20.0.4",
       "live-server": "^1.2.0",
       "moment": "2.18.1",
@@ -2120,6 +2122,12 @@ Lockfile:
       lodash "^4.17.4"
       object.assign "^4.0.4"
       prop-types "^15.6.0"
+  
+  enzyme-to-json@3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.0.1.tgz#16468e2ff3e4db817d84f9df38760abbc322273d"
+    dependencies:
+      lodash "^4.17.4"
   
   enzyme@3.0.0:
     version "3.0.0"
@@ -6876,8 +6884,8 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c jest --config=jest.config.json --watch
-  Directory: C:\react\expensify2-app
+  Arguments: /d /s /c webpack -p --env production
+  Directory: c:\react\expensify2-app
   Output:
   
       at ProcessTermError.MessageError (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)

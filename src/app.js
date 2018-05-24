@@ -26,7 +26,7 @@ import getVisibleExpenses from "./selectors/expenses";
 
 
 
-
+console.log("test");
 
 
 //vse co je v komponente Provider bude mit pristup do redux store po pouziti fce connect (tady se ten store jmenuje store)
