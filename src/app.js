@@ -23,14 +23,10 @@ import getVisibleExpenses from "./selectors/expenses";
 
 
 
-store.dispatch(addExpense({description: "Water bill", amount: 500, createdAt: 156213}));
-store.dispatch(addExpense({description: "Gas bill", amount: 40, createdAt: 77796413}));
-store.dispatch(addExpense({description: "rent", amount: 1095, createdAt: -9746413}));
 
 
-const state = store.getState(); //vlozeni soucasneho redux store do promenne state
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters); //profiltrovani a serazeni veci ze state do nove promenne visibleExpenses
-console.log(visibleExpenses);
+
+
 
 
 //vse co je v komponente Provider bude mit pristup do redux store po pouziti fce connect (tady se ten store jmenuje store)
