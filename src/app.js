@@ -20,13 +20,14 @@ import "react-dates/lib/css/_datepicker.css";
 import { addExpense } from "./actions/expenses";
 import { setTextFilter } from "./actions/filters";
 import getVisibleExpenses from "./selectors/expenses";
+import "./firebase/firebase";
 
 
 
 
 
 
-console.log("test");
+//console.log("test");
 
 
 //vse co je v komponente Provider bude mit pristup do redux store po pouziti fce connect (tady se ten store jmenuje store)

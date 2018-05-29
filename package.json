@@ -21,6 +21,7 @@
     "css-loader": "^0.28.4",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "^3.0.2",
+    "firebase": "4.2.0",
     "moment": "2.18.1",
     "node-sass": "^4.8.3",
     "normalize.css": "^7.0.0",
@@ -34,17 +35,20 @@
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
+    "redux-thunk": "2.2.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
     "uuid": "3.1.0",
     "webpack": "^3.1.0"
   },
   "devDependencies": {
+    "dotenv": "4.0.0",
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0",
+    "redux-mock-store": "1.2.3",
     "webpack-dev-server": "^2.5.1"
   }
 }
