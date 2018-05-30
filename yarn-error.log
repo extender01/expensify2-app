@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run test -o --watch
+  C:\Program Files\nodejs\node.exe C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev cros-env@5.0.5
 
 PATH: 
   C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Vita NTB\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Vita NTB\AppData\Roaming\npm;C:\Program Files\heroku\bin
@@ -23,7 +23,7 @@ npm manifest:
       "build:dev": "webpack",
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
-      "test": "jest --config=jest.config.json",
+      "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
       "start": "node server/server.js",
       "heroku-postbuild": "yarn run build:prod"
     },
@@ -58,6 +58,7 @@ npm manifest:
       "webpack": "^3.1.0"
     },
     "devDependencies": {
+      "dotenv": "4.0.0",
       "enzyme": "3.0.0",
       "enzyme-adapter-react-16": "1.0.0",
       "enzyme-to-json": "3.0.1",
@@ -2010,6 +2011,10 @@ Lockfile:
     dependencies:
       dom-serializer "0"
       domelementtype "1"
+  
+  dotenv@4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
   
   ecc-jsbn@~0.1.1:
     version "0.1.1"
@@ -6941,17 +6946,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c jest --config=jest.config.json -o --watch
-  Directory: c:\react\expensify2-app
-  Output:
-  
-      at ProcessTermError.MessageError (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+  Error: https://registry.yarnpkg.com/cros-env: Not found
+      at Request.params.callback [as _callback] (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65019:18)
+      at Request.self.callback (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:132430:22)
       at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:133413:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:133333:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
