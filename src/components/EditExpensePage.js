@@ -1,7 +1,7 @@
 import React from "react";
 import  { connect } from "react-redux";
 import ExpenseForm from "./ExpenseForm";
-import { editExpense, startRemoveExpense } from "../actions/expenses";
+import { startEditExpense, startRemoveExpense } from "../actions/expenses";
 
 
 
@@ -10,7 +10,7 @@ import { editExpense, startRemoveExpense } from "../actions/expenses";
 
 export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
-        this.props.editExpense(this.props.expense.id, expense);
+        this.props.startEditExpense(this.props.expense.id, expense);
         this.props.history.push("/");
     };
 
@@ -56,7 +56,7 @@ const mapStateToProps = (state, props) => {
 
 //stejne jako mapStateToProps muze vyuzit jako druhy argument dosavadnich props, ktere uz existujou (tady nevyuzito)
 const mapDispathToProps = (dispatch) => ({
-    editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+    startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
     //(data) protoze vime ze tam prijde objekt s property id, tak proste definujem objekt obecne
     startRemoveExpense: (data) => dispatch(startRemoveExpense(data))
 });

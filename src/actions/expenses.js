@@ -59,13 +59,33 @@ export const startRemoveExpense = (objektsID) => {
 
 
 
-//EDIT_EXPENSE
+
+
+
+//EDIT_EXPENSE              //prijmane id je string a vytvoreny action objekt to ma jako property (vytvorene zkracenym ES6 zapisem)
 export const editExpense = (id, updates) => ({
     type: "EDIT_EXPENSE",
     id,
     updates
 
 });
+
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return db.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(editExpense(id, updates));
+            console.log(id, "pauza", updates)
+
+        });
+            
+       
+    };
+};
+
+
+
+
+
 
 
 //SET_EXPENSES
