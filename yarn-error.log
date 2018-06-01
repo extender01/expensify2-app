@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test -- --watch
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Vita NTB\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Vita NTB\AppData\Roaming\npm;C:\Program Files\heroku\bin
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;C:\Users\Vita NTB\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Vita NTB\AppData\Roaming\npm;C:\Program Files\heroku\bin
 
 Yarn version: 
   1.5.1
@@ -6955,10 +6955,10 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
-  Command: C:\Windows\system32\cmd.exe
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c cross-env NODE_ENV=test jest --config=jest.config.json --watch
-  Directory: c:\react\expensify2-app
+  Directory: C:\react\expensify2-app
   Output:
   
       at ProcessTermError.MessageError (C:\Users\Vita NTB\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)

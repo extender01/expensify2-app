@@ -20,5 +20,10 @@ exports[`should render Header component 1`] = `
   >
     Pridej   
   </NavLink>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
 </header>
 `;
