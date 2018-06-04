@@ -14,8 +14,10 @@ export const addExpense = (expense) => ({
 //promise ma v argumentu informace o id polozky zapsane do firebase v objektu ref, takze potrebne parametry o expense pro addExpense predame v desctructured podobe ref.key a zbytek pres spread obkejtu expense
 export const startAddExpense = (expenseData = {}) => {
     //muzeme vratit fci misto objektu diky middleware redux thunk
-    return (dispatch) => {
+    return (dispatch, getState) => {     //dispatch a getState poskytuje redux thunk
         
+        //zjistime id prihlaseneho uzivatele ze store
+        const uid = getState().auth.uid
         //desctructuring objektu expenseData  =  jako kdyby se vytvorily samostatne const description, const note.. a do nich se dosadi hodnoty, ktere prijdou od toho kdo voval startAddExpense (kdyz neprijde nic, tak se tam dosadi defaultni hodnty)
         const {
             description = "",
@@ -29,7 +31,7 @@ export const startAddExpense = (expenseData = {}) => {
         const expense = {description, note, amount, createdAt}
         
         //return abychom mohli za to pridat dalsi promise v testovani (promise chaining - ta predchazejici promise musi byt jako navratova hodnota)
-        return db.ref("expenses").push(expense).then((ref) => {
+        return db.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
             dispatch(addExpense({
                 id: ref.key,
                 ...expense
@@ -47,10 +49,10 @@ export const removeExpense = ({id} = {}) => ({
 
 
 export const startRemoveExpense = (objektsID) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         
-        
-        return db.ref(`expenses/${objektsID.id}`).remove().then(() => {
+        const uid = getState().auth.uid;
+        return db.ref(`users/${uid}/expenses/${objektsID.id}`).remove().then(() => {
             dispatch(removeExpense({id: objektsID.id}));
             
         });
@@ -71,8 +73,9 @@ export const editExpense = (id, updates) => ({
 });
 
 export const startEditExpense = (id, updates) => {
-    return (dispatch) => {
-        return db.ref(`expenses/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return db.ref(`users/${uid}/expenses/${id}`).update(updates).then(() => {
             dispatch(editExpense(id, updates));
             console.log(id, "pauza", updates)
 
@@ -95,12 +98,12 @@ export const setExpenses = (expenses) => ({
 });
 
  export const startSetExpenses = () => {
-     return (dispatch) => {
+     return (dispatch, getState) => {
       
+        const uid = getState().auth.uid;
+        const expenses = [];
 
-        const expenses = []
-
-        return db.ref("expenses").once("value").then((snapshot) => {
+        return db.ref(`users/${uid}/expenses`).once("value").then((snapshot) => {
             
 
             snapshot.forEach((childSnapshot) => {

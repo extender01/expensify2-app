@@ -9,7 +9,7 @@ export const PrivateRoute = ({
     component: Component,
     ...rest //vse ostatni co dosud neni v destructured podobe (nemusi se jmenovat rest, muze to byt jakkoli)
 }) => (
-    //route dostava jako props jenom to co je v ...rest, tzn vse co je v props krome isAuthenticated a component: Component, proto tam za ...rest davame component
+    //route dostava jako props jenom to co je v ...rest, tzn vse co je v props krome isAuthenticated a component: Component, proto tam za ...rest davame component protoze to v ...rest neni a my to potrebujeme
     //vysledek fce ktera je v component= rozhoduje kterou komponentu bude react router renderovat - pokud je uzivatel prihlasen tak vyrenderuje komponentu, kterou mu predal v props jako "component: Component" PrivateRoute v AppRouteru...
     //pokud neni uzivatel prihlasen tak se vyrenderuje komponenta Redirect z react routeru, ktera presmeruje na zadane misto
     <Route {...rest} component={(props) => (
